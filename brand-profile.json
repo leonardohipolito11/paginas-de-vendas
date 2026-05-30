@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "brand_name": "Alias Shortcut Bible",
+  "website_url": "file:///alias-sales-page-11-blocks.html",
+  "extracted_at": "2026-05-28T00:00:00Z",
+
+  "voice": {
+    "formal_casual": 7,
+    "rational_emotional": 4,
+    "playful_serious": 3,
+    "bold_subtle": 8,
+    "traditional_innovative": 6,
+    "expert_accessible": 3,
+    "descriptors": ["direct", "bold", "expert-focused", "efficiency-obsessed", "no-fluff"]
+  },
+
+  "colors": {
+    "primary": "#FFD700",
+    "secondary": ["#00C853", "#ffffff"],
+    "forbidden": ["pastel colors", "light backgrounds", "corporate blue"],
+    "background": "#080808",
+    "text": "#ffffff"
+  },
+
+  "typography": {
+    "heading_font": "Inter",
+    "body_font": "Inter",
+    "pairing_descriptor": "Inter ultra-bold 900 weight headings + Bebas Neue for numbers/accents — dark, high-contrast, technical"
+  },
+
+  "imagery": {
+    "style": "flat design / product mockup",
+    "subjects": ["PDF cheat sheet", "keyboard shortcuts", "dark UI screens", "designer workstation"],
+    "composition": "dark background, gold accent highlights, minimal clutter, product-centered",
+    "forbidden": ["generic stock photos", "smiling people", "bright white backgrounds", "corporate handshakes", "lifestyle photography"]
+  },
+
+  "aesthetic": {
+    "mood_keywords": ["dark", "premium", "precise", "technical", "gold-accented"],
+    "texture": "minimal, dark, flat with glowing accents",
+    "negative_space": "moderate"
+  },
+
+  "brand_values": ["efficiency", "precision", "professional speed", "zero wasted time"],
+
+  "target_audience": {
+    "age_range": "22-40",
+    "profession": "automotive surface designers, industrial designers, CAD modelers using Autodesk Alias at OEM studios or freelance",
+    "pain_points": ["hunting through menus for commands", "memorizing shortcuts manually", "slow modeling workflow", "not knowing advanced shortcuts"],
+    "aspirations": ["model like senior OEM designers", "find any command in 3 seconds", "double their modeling speed", "look professional at work"]
+  }
+}
