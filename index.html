@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alias Shortcut Bible — Master 200+ Shortcuts and Model 5x Faster</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #080808;
+    --bg-2: #111111;
+    --ink: #ffffff;
+    --ink-2: #c4c4c4;
+    --muted: #7a7a7a;
+    --accent: #FFD700;
+    --accent-dim: rgba(255, 215, 0, 0.15);
+    --cta: #00C853;
+    --cta-hover: #00E676;
+    --danger: #ff4444;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-strong: rgba(255, 255, 255, 0.15);
+    --card: #141414;
+    --card-hover: #1c1c1c;
+    --radius: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  /* SCROLL ANIMATIONS */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* TOP BAR */
+  .topbar {
+    background: linear-gradient(90deg, #009624 0%, var(--cta) 50%, #009624 100%);
+    background-size: 200% auto;
+    animation: shimmer-bar 3s linear infinite;
+    text-align: center;
+    padding: 11px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.03em;
+    position: relative;
+    z-index: 100;
+  }
+  @keyframes shimmer-bar {
+    0% { background-position: 200% center; }
+    100% { background-position: 0% center; }
+  }
+  .topbar .countdown-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 10px;
+    background: rgba(0,0,0,0.2);
+    padding: 2px 10px;
+    border-radius: 20px;
+  }
+  .topbar .cd-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+
+  /* ═══════════════ BLOCO 01 — HERO ═══════════════ */
+  .block-01 {
+    background: var(--bg);
+    padding: 56px 0 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-glow {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.07) 0%, transparent 65%);
+    pointer-events: none;
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+  }
+  .block-01 .container { position: relative; z-index: 2; }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-dim);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow .dot {
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: blink 1.4s ease-in-out infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .h1-main {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: clamp(30px, 5.5vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    margin-bottom: 22px;
+  }
+  .h1-main .yellow {
+    background: var(--accent);
+    color: #000;
+    padding: 2px 10px;
+    display: inline;
+  }
+
+  /* PRODUCT MOCKUP */
+  .product-shot {
+    margin: 36px auto 28px;
+    max-width: 500px;
+    position: relative;
+  }
+  .product-shot::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(ellipse, rgba(255,215,0,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .product-mockup {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, #1a1a1a 0%, #232323 100%);
+    border: 1px solid var(--line-strong);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 28px;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,215,0,0.08);
+  }
+  .mockup-pdf {
+    background: #fff;
+    color: #000;
+    padding: 16px;
+    border-radius: 6px;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+    transform: rotate(-4deg);
+    box-shadow: 8px 12px 32px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+  }
+  .mockup-pdf:hover { transform: rotate(-2deg) scale(1.02); }
+  .mockup-pdf .title-band {
+    background: #000;
+    color: var(--accent);
+    padding: 4px 8px;
+    font-size: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    border-radius: 2px;
+  }
+  .mockup-pdf .pdf-title {
+    font-size: 10px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+  .mockup-pdf .keys-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    flex: 1;
+  }
+  .mockup-pdf .k {
+    background: #f0f0f0;
+    padding: 4px 2px;
+    text-align: center;
+    font-size: 7px;
+    font-weight: 700;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mockup-pdf .k.hi { background: var(--accent); }
+  .mockup-pdf .k.red { background: #ff4444; color: #fff; }
+  .mockup-poster {
+    background: #000;
+    border: 2px solid var(--accent);
+    padding: 12px;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+    transform: rotate(5deg);
+    box-shadow: 8px 12px 32px rgba(0,0,0,0.6);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+  }
+  .mockup-poster:hover { transform: rotate(3deg) scale(1.02); }
+  .mockup-poster .pt {
+    color: var(--accent);
+    font-size: 9px;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .mockup-poster .pgrid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+  .mockup-poster .pk {
+    background: rgba(255,255,255,0.06);
+    border-radius: 1px;
+    transition: background 0.2s;
+  }
+  .mockup-poster .pk.y { background: var(--accent); }
+
+  /* BADGES */
+  .badges-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 24px 0 28px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: var(--card);
+    border: 1px solid var(--line-strong);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .badge:hover { border-color: rgba(255,215,0,0.3); background: var(--card-hover); }
+  .badge .icon { font-size: 13px; }
+
+  .explanation {
+    font-size: 16px;
+    color: var(--ink-2);
+    max-width: 500px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+  .explanation .highlight { color: var(--accent); font-weight: 700; }
+
+  /* PRICE BLOCK */
+  .price-block {
+    background: linear-gradient(135deg, rgba(255,215,0,0.04) 0%, transparent 100%);
+    border: 1px solid rgba(255,215,0,0.15);
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: inline-block;
+    margin-bottom: 28px;
+    min-width: 280px;
+  }
+  .price-anchor {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .price-anchor s { color: #555; }
+  .price-main {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+  }
+  .price-main .cur { font-size: 34px; vertical-align: top; margin-right: 4px; margin-top: 8px; display: inline-block; }
+  .price-sub { font-size: 12px; color: var(--muted); }
+
+  /* CTA BUTTON */
+  .cta-button {
+    display: inline-block;
+    background: var(--cta);
+    color: #fff;
+    padding: 20px 44px;
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius);
+    letter-spacing: 0.03em;
+    box-shadow: 0 6px 0 #009624, 0 12px 40px rgba(0, 200, 83, 0.3);
+    transition: all 0.15s;
+    border: none;
+    cursor: pointer;
+    animation: pulse-cta 2.5s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-button::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -60%;
+    width: 40%; height: 200%;
+    background: rgba(255,255,255,0.15);
+    transform: skewX(-20deg);
+    animation: shine 3s ease-in-out infinite;
+  }
+  @keyframes shine {
+    0%, 100% { left: -60%; opacity: 0; }
+    30% { left: 120%; opacity: 1; }
+    31% { opacity: 0; }
+  }
+  @keyframes pulse-cta {
+    0%, 100% { transform: scale(1); box-shadow: 0 6px 0 #009624, 0 12px 40px rgba(0,200,83,0.3); }
+    50% { transform: scale(1.015); box-shadow: 0 6px 0 #009624, 0 16px 50px rgba(0,200,83,0.4); }
+  }
+  .cta-button:hover {
+    background: var(--cta-hover);
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 #009624, 0 8px 24px rgba(0, 200, 83, 0.4);
+    animation: none;
+  }
+  .cta-arrow { display: inline-block; margin-left: 8px; }
+
+  .trust-row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .trust-row span { display: inline-flex; align-items: center; gap: 5px; }
+
+  /* ═══════════════ BLOCO 02 — DEMONSTRATIVO ═══════════════ */
+  .block-02 {
+    background: linear-gradient(180deg, var(--bg) 0%, #0d0d0d 100%);
+    padding: 72px 0;
+    text-align: center;
+  }
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #000;
+    padding: 8px 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    margin-bottom: 36px;
+    border-radius: 4px;
+  }
+  .preview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+  @media (max-width: 600px) { .preview-grid { grid-template-columns: 1fr; } }
+  .preview-card {
+    background: #fff;
+    color: #000;
+    padding: 22px;
+    border-radius: 8px;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .preview-card:hover { transform: translateY(-6px); box-shadow: 0 30px 70px rgba(0,0,0,0.6); }
+  .preview-card .pc-tag {
+    font-size: 8px;
+    font-weight: 800;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+  .preview-card .pc-title {
+    font-size: 13px;
+    font-weight: 900;
+    margin-bottom: 14px;
+    line-height: 1.1;
+  }
+  .preview-card .pc-section { margin-bottom: 12px; }
+  .preview-card .pc-label {
+    font-size: 7px;
+    font-weight: 800;
+    background: #000;
+    color: var(--accent);
+    display: inline-block;
+    padding: 2px 6px;
+    margin-bottom: 5px;
+    letter-spacing: 0.06em;
+  }
+  .preview-card .pc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    padding: 4px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .preview-card .pc-row:last-child { border-bottom: none; }
+  .preview-card .pc-row .ck {
+    background: #eee;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 8px;
+    box-shadow: 0 2px 0 #ccc;
+  }
+  .preview-card .pc-row .ck.h { background: var(--accent); box-shadow: 0 2px 0 #ccaa00; }
+
+  /* ═══════════════ BLOCO 03 — BENEFÍCIOS ═══════════════ */
+  .block-03 {
+    background: #0d0d0d;
+    padding: 72px 0;
+    text-align: center;
+  }
+  .block-headline {
+    font-weight: 900;
+    font-size: clamp(22px, 4vw, 34px);
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .block-headline .accent-text { color: var(--accent); }
+  .block-headline u { text-decoration-color: rgba(255,215,0,0.5); text-underline-offset: 4px; }
+  .block-subline {
+    color: var(--muted);
+    margin-bottom: 40px;
+    font-size: 15px;
+  }
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 600px) { .benefit-grid { grid-template-columns: 1fr; } }
+  .benefit-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 24px 20px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--accent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .benefit-card:hover { border-color: rgba(255,215,0,0.25); background: var(--card-hover); transform: translateX(3px); }
+  .benefit-card:hover::before { opacity: 1; }
+  .benefit-card .icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    background: var(--accent-dim);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .benefit-card .text {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  /* ═══════════════ STATS ROW ═══════════════ */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  @media (max-width: 500px) { .stats-row { grid-template-columns: 1fr; } }
+  .stat-item {
+    background: var(--card);
+    padding: 24px 16px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+
+  /* ═══════════════ BLOCO 05 — URGENCY ═══════════════ */
+  .block-05 {
+    background: var(--bg);
+    padding: 64px 0;
+    text-align: center;
+  }
+  .urgency-headline {
+    font-weight: 900;
+    font-size: clamp(20px, 3.8vw, 30px);
+    line-height: 1.25;
+    margin-bottom: 32px;
+  }
+
+  /* ═══════════════ BLOCO 06 — IDEAL PARA VOCÊ ═══════════════ */
+  .block-06 {
+    background: linear-gradient(180deg, #0d0d0d 0%, var(--bg-2) 100%);
+    padding: 72px 0;
+  }
+  .section-tag-red {
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 13px;
+    margin-bottom: 36px;
+    color: var(--ink-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .section-tag-red::before, .section-tag-red::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line-strong);
+    max-width: 80px;
+  }
+  .ideal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: 700px) { .ideal-grid { grid-template-columns: 1fr; } }
+  .ideal-card {
+    background: #fff;
+    color: #000;
+    padding: 28px 20px;
+    border-radius: var(--radius);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  .ideal-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+  .ideal-card .ic-icon {
+    font-size: 38px;
+    margin-bottom: 14px;
+    line-height: 1;
+  }
+  .ideal-card .ic-title {
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #000;
+    line-height: 1.2;
+  }
+  .ideal-card .ic-text {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  /* ═══════════════ BLOCO 07 — PRODUTO PRINCIPAL ═══════════════ */
+  .block-07 {
+    background: var(--bg);
+    padding: 72px 0;
+  }
+  .receive-bar {
+    background: linear-gradient(90deg, transparent 0%, rgba(255,215,0,0.1) 50%, transparent 100%);
+    border-top: 1px solid rgba(255,215,0,0.25);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    text-align: center;
+    padding: 12px 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 36px;
+  }
+  .item-card {
+    background: var(--card);
+    border: 1px solid var(--line-strong);
+    border-radius: 12px;
+    padding: 36px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 36px;
+    align-items: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  @media (max-width: 600px) { .item-card { grid-template-columns: 1fr; padding: 24px; } }
+  .item-mockup-box {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border: 1px solid var(--line-strong);
+    aspect-ratio: 1;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .item-mockup-box .mini-pdf {
+    background: #fff;
+    width: 72%;
+    aspect-ratio: 3/4;
+    padding: 10px;
+    transform: rotate(-4deg);
+    box-shadow: 6px 8px 20px rgba(0,0,0,0.5);
+    border-radius: 4px;
+  }
+  .item-mockup-box .mini-pdf .b {
+    background: #000;
+    color: var(--accent);
+    padding: 3px;
+    font-size: 6px;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 5px;
+    border-radius: 2px;
+  }
+  .item-mockup-box .mini-pdf .lines { display: flex; flex-direction: column; gap: 3px; }
+  .item-mockup-box .mini-pdf .l { height: 2px; background: #ddd; border-radius: 1px; }
+  .item-mockup-box .mini-pdf .l.short { width: 65%; }
+  .item-content .item-label {
+    background: var(--accent);
+    color: #000;
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    letter-spacing: 0.06em;
+    border-radius: 3px;
+  }
+  .item-content h3 {
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .item-content .sub {
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-style: italic;
+  }
+  .item-content ul { list-style: none; padding: 0; }
+  .item-content ul li {
+    padding: 7px 0 7px 26px;
+    position: relative;
+    font-size: 14px;
+    color: var(--ink-2);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .item-content ul li:last-child { border-bottom: none; }
+  .item-content ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--cta);
+    font-weight: 900;
+  }
+
+  /* ═══════════════ BLOCO 08 — BÔNUS ═══════════════ */
+  .block-08 {
+    background: linear-gradient(180deg, #0d0d0d 0%, var(--bg) 100%);
+    padding: 72px 0;
+    text-align: center;
+  }
+  .bonus-header {
+    color: var(--ink-2);
+    font-size: 18px;
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  .bonus-header strong { color: var(--ink); font-weight: 900; }
+  .bonus-more { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+  .bonus-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #000;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 36px;
+    letter-spacing: 0.06em;
+    box-shadow: 0 4px 20px rgba(255,215,0,0.3);
+  }
+  .bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 700px) { .bonus-grid { grid-template-columns: repeat(2, 1fr); } }
+  .bonus-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px 14px;
+    text-align: left;
+    position: relative;
+    transition: border-color 0.2s, transform 0.25s, box-shadow 0.25s;
+  }
+  .bonus-card:hover { border-color: rgba(255,215,0,0.25); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+  .bonus-card .bonus-tag {
+    background: var(--danger);
+    color: #fff;
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    border-radius: 3px;
+  }
+  .bonus-card .bonus-mockup {
+    background: linear-gradient(135deg, #242424 0%, #181818 100%);
+    aspect-ratio: 4/3;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .bonus-card .bonus-mockup .mini {
+    background: #fff;
+    width: 58%;
+    aspect-ratio: 3/4;
+    padding: 5px;
+    transform: rotate(-3deg);
+    box-shadow: 3px 4px 10px rgba(0,0,0,0.5);
+    border-radius: 3px;
+  }
+  .bonus-card .bonus-mockup .mini .head {
+    background: var(--accent);
+    height: 5px;
+    margin-bottom: 4px;
+    border-radius: 1px;
+  }
+  .bonus-card .bonus-mockup .mini .line {
+    height: 2px;
+    background: #e0e0e0;
+    margin-bottom: 3px;
+    border-radius: 1px;
+  }
+  .bonus-card .bonus-mockup .mini .line:nth-child(3) { width: 70%; }
+  .bonus-card h4 {
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .bonus-card .b-italic {
+    color: var(--accent);
+    font-style: italic;
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+  .bonus-card p { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+  /* ═══════════════ BLOCO 09 — PLANOS ═══════════════ */
+  .block-09 {
+    background: var(--bg);
+    padding: 72px 0;
+    text-align: center;
+  }
+  .plans-headline {
+    font-weight: 900;
+    font-size: clamp(24px, 4.5vw, 32px);
+    margin-bottom: 8px;
+  }
+  .plans-sub {
+    color: var(--muted);
+    margin-bottom: 36px;
+    font-size: 15px;
+  }
+  .plans-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  @media (max-width: 600px) { .plans-grid { grid-template-columns: 1fr; } }
+  .plan {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 28px 22px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease;
+  }
+  .plan.basic { opacity: 0.9; }
+  .plan.full {
+    border: 2px solid var(--accent);
+    background: linear-gradient(180deg, #1e1c0a 0%, #141414 50%, #0f0f0f 100%);
+    transform: scale(1.03);
+    box-shadow: 0 0 0 1px rgba(255,215,0,0.1), 0 24px 60px rgba(255,215,0,0.08);
+  }
+  .plan.full:hover { transform: scale(1.04); }
+  .plan-tag {
+    background: #333;
+    color: var(--ink-2);
+    display: inline-block;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    border-radius: 12px;
+    letter-spacing: 0.05em;
+  }
+  .plan.full .plan-tag {
+    background: var(--accent);
+    color: #000;
+    box-shadow: 0 4px 16px rgba(255,215,0,0.3);
+  }
+  .plan h3 {
+    font-size: 17px;
+    font-weight: 800;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .plan .plan-mockup {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #242424 0%, #1a1a1a 100%);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    padding: 18px;
+  }
+  .plan .plan-mockup .pkg {
+    background: #fff;
+    width: 58%;
+    aspect-ratio: 3/4;
+    padding: 8px;
+    transform: rotate(-4deg);
+    box-shadow: 4px 6px 14px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-radius: 3px;
+  }
+  .plan .plan-mockup .pkg .b {
+    background: #000;
+    color: var(--accent);
+    font-size: 6px;
+    padding: 2px;
+    text-align: center;
+    font-weight: 800;
+    border-radius: 1px;
+  }
+  .plan .plan-mockup .pkg .l { height: 2px; background: #ddd; border-radius: 1px; }
+  .plan ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 24px;
+    flex: 1;
+  }
+  .plan ul li {
+    padding: 7px 0 7px 22px;
+    position: relative;
+    font-size: 13px;
+    line-height: 1.35;
+    color: var(--ink-2);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .plan ul li:last-child { border-bottom: none; }
+  .plan ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--cta);
+    font-weight: 900;
+  }
+  .plan ul li.cross::before { content: '✕'; color: #444; }
+  .plan ul li.cross { color: #444; text-decoration: line-through; text-decoration-color: #333; }
+  .plan .plan-anchor { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  .plan .plan-anchor s { color: #444; }
+  .plan .plan-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  .plan.full .plan-price { color: var(--accent); }
+  .plan .plan-price .cur { font-size: 22px; vertical-align: top; margin-top: 4px; display: inline-block; }
+  .plan .plan-installment { font-size: 11px; color: var(--muted); margin-bottom: 16px; }
+  .plan .plan-cta {
+    display: block;
+    background: var(--cta);
+    color: #fff;
+    padding: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: var(--radius);
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    box-shadow: 0 4px 0 #009624;
+    transition: all 0.15s;
+  }
+  .plan.basic .plan-cta {
+    background: #333;
+    box-shadow: 0 4px 0 #222;
+    color: var(--muted);
+  }
+  .plan .plan-cta:hover { transform: translateY(3px); box-shadow: 0 1px 0 #009624; }
+  .plan.basic .plan-cta:hover { box-shadow: 0 1px 0 #222; }
+  .plan .urgency-line {
+    background: rgba(255,68,68,0.1);
+    border: 1px solid rgba(255,68,68,0.25);
+    color: #ff6666;
+    padding: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .plan .save-badge {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: var(--danger);
+    color: #fff;
+    padding: 7px 12px;
+    font-size: 11px;
+    font-weight: 800;
+    border-radius: 20px;
+    transform: rotate(8deg);
+    box-shadow: 0 4px 12px rgba(255,68,68,0.4);
+  }
+
+  /* ═══════════════ GUARANTEE ═══════════════ */
+  .guarantee-block {
+    background: linear-gradient(135deg, #1a1500 0%, #2a2000 50%, #1a1500 100%);
+    border-top: 1px solid rgba(255,215,0,0.2);
+    border-bottom: 1px solid rgba(255,215,0,0.2);
+    color: var(--ink);
+    padding: 48px 0;
+    text-align: center;
+  }
+  .guarantee-block .seal {
+    width: 88px;
+    height: 88px;
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    line-height: 1;
+    transform: rotate(-6deg);
+    background: rgba(255,215,0,0.05);
+    box-shadow: 0 0 0 6px rgba(255,215,0,0.08), 0 8px 30px rgba(255,215,0,0.15);
+  }
+  .guarantee-block .seal .n { font-size: 32px; color: var(--accent); font-family: 'Bebas Neue', sans-serif; }
+  .guarantee-block .seal .d { font-size: 8px; letter-spacing: 0.12em; color: var(--accent); }
+  .guarantee-block h3 {
+    font-weight: 900;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .guarantee-block p {
+    max-width: 480px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  /* ═══════════════ BLOCO 10 — FAQ ═══════════════ */
+  .block-10 {
+    background: var(--bg);
+    padding: 72px 0;
+  }
+  .faq-title {
+    text-align: center;
+    font-weight: 900;
+    font-size: clamp(22px, 4vw, 28px);
+    margin-bottom: 36px;
+  }
+  details {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  details:hover { border-color: var(--line-strong); }
+  details[open] { border-color: rgba(255,215,0,0.2); }
+  summary {
+    cursor: pointer;
+    padding: 20px 24px;
+    font-weight: 700;
+    font-size: 14px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.15s;
+    color: var(--ink);
+  }
+  summary:hover { background: rgba(255,255,255,0.02); }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: '+';
+    color: var(--accent);
+    font-size: 22px;
+    font-weight: 300;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  details[open] summary::after { transform: rotate(45deg); }
+  details > p {
+    padding: 0 24px 20px;
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.7;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+    margin-top: -1px;
+  }
+
+  /* ═══════════════ BLOCO 11 — FOOTER ═══════════════ */
+  .block-11 {
+    background: #000;
+    padding: 36px 0;
+    border-top: 1px solid var(--line);
+  }
+  .footer-brand {
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: #555;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .footer-disclaimer {
+    text-align: center;
+    color: #444;
+    font-size: 11px;
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+  .footer-links {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 11px;
+    color: #444;
+  }
+  .footer-links a { color: #555; text-decoration: none; margin: 0 10px; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--muted); }
+
+  /* STICKY MOBILE CTA */
+  .sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(8,8,8,0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--line-strong);
+    padding: 14px 20px;
+    z-index: 999;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  @media (max-width: 680px) { .sticky-cta { display: flex; } }
+  .sticky-cta .price { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--accent); line-height: 1; }
+  .sticky-cta .sub { font-size: 10px; color: var(--muted); }
+  .sticky-cta .btn {
+    background: var(--cta);
+    color: #fff;
+    padding: 12px 24px;
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 0 #009624;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* DIVIDER */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--line-strong) 50%, transparent 100%);
+    margin: 0;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  ⚡ <strong>LIMITED LAUNCH PRICE</strong> — Save 73% Today Only
+  <span class="countdown-inline">
+    <span class="cd-num" id="cd-h">00</span>h
+    <span class="cd-num" id="cd-m">00</span>m
+    <span class="cd-num" id="cd-s">00</span>s
+  </span>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- BLOCO 01 — HERO -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="block-01">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-eyebrow reveal">
+      <span class="dot"></span>
+      The Professional Shortcut Reference for Alias Modelers
+    </div>
+
+    <h1 class="h1-main reveal reveal-delay-1">
+      All <span class="yellow">200+ Alias Shortcuts</span><br>
+      organized command by command
+    </h1>
+
+    <div class="product-shot reveal reveal-delay-2">
+      <img src="product-mockup.png" alt="Alias Shortcut Bible — PDF guide and A3 poster" style="width:100%;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,0.6);" />
+    </div>
+
+    <div class="badges-row reveal reveal-delay-3">
+      <div class="badge"><span class="icon">⚡</span> Instant Download</div>
+      <div class="badge"><span class="icon">🖥️</span> Alias 2024 · 2025 · 2026</div>
+      <div class="badge"><span class="icon">🔒</span> Secure Checkout</div>
+    </div>
+
+    <p class="explanation reveal reveal-delay-4">
+      Detailed and easy-to-read explanations for <span class="highlight">every single shortcut</span> in Alias Surface, AutoStudio, Concept & Design — so you stop hunting through menus and start modeling like the senior designers at OEM studios. For just <span class="highlight">$12</span>.
+    </p>
+
+    <div class="price-block reveal reveal-delay-4">
+      <div class="price-anchor"><s>$44</s> — 73% OFF launch price</div>
+      <div class="price-main"><span class="cur">$</span>12</div>
+      <div class="price-sub">One-time payment · Lifetime access · No subscription</div>
+    </div>
+
+    <div class="reveal">
+      <a href="#plans" class="cta-button">
+        I want the cheat sheet <span class="cta-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="trust-row reveal">
+      <span>🔒 Stripe checkout</span>
+      <span>💳 Visa · Mastercard · PayPal</span>
+      <span>↩ 7-day refund</span>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- BLOCO 02 — DEMONSTRATIVO -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="block-02">
+  <div class="container">
+    <div class="section-label reveal">SEE EXACTLY WHAT YOU'LL GET</div>
+
+    <div class="preview-grid">
+      <div class="preview-card reveal reveal-delay-1">
+        <div class="pc-tag">// PAGE 03 — CURVES</div>
+        <div class="pc-title">CURVE TOOLS<br>workflow-grouped</div>
+        <div class="pc-section">
+          <div class="pc-label">CREATION</div>
+          <div class="pc-row"><span>New Curve CV</span><span class="ck h">C</span></div>
+          <div class="pc-row"><span>New Curve EP</span><span class="ck">⇧+C</span></div>
+          <div class="pc-row"><span>Circle</span><span class="ck">O</span></div>
+          <div class="pc-row"><span>Arc 3-Point</span><span class="ck">⇧+O</span></div>
+        </div>
+        <div class="pc-section">
+          <div class="pc-label">EDITING</div>
+          <div class="pc-row"><span>Insert Edit Pt</span><span class="ck h">⌃+E</span></div>
+          <div class="pc-row"><span>Curve Fillet</span><span class="ck h">F</span></div>
+          <div class="pc-row"><span>Curve Blend</span><span class="ck">B</span></div>
+        </div>
+      </div>
+      <div class="preview-card reveal reveal-delay-2">
+        <div class="pc-tag">// PAGE 07 — SURFACES</div>
+        <div class="pc-title">SURFACE TOOLS<br>Class-A workflow</div>
+        <div class="pc-section">
+          <div class="pc-label">CREATION</div>
+          <div class="pc-row"><span>Square</span><span class="ck h">S</span></div>
+          <div class="pc-row"><span>Skin</span><span class="ck">⇧+S</span></div>
+          <div class="pc-row"><span>Birail</span><span class="ck">⌃+B</span></div>
+          <div class="pc-row"><span>Loft</span><span class="ck">L</span></div>
+        </div>
+        <div class="pc-section">
+          <div class="pc-label">DIAGNOSTICS</div>
+          <div class="pc-row"><span>Zebra</span><span class="ck h">Z</span></div>
+          <div class="pc-row"><span>Curvature</span><span class="ck">⇧+Z</span></div>
+          <div class="pc-row"><span>Cross-Section</span><span class="ck">X</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- BLOCO 03 — BENEFÍCIOS -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="block-03">
+  <div class="container">
+    <h2 class="block-headline reveal">
+      A <u>fully illustrated and organized</u> cheat sheet<br>
+      <span class="accent-text">built for surface designers</span>
+    </h2>
+    <p class="block-subline reveal">Stop losing time. Start modeling at professional speed.</p>
+
+    <div class="benefit-grid">
+      <div class="benefit-card reveal reveal-delay-1">
+        <span class="icon">⚡</span>
+        <span class="text">Find any command in 3 seconds — guaranteed</span>
+      </div>
+      <div class="benefit-card reveal reveal-delay-2">
+        <span class="icon">🎯</span>
+        <span class="text">Workflow-grouped, not alphabetical like every other doc</span>
+      </div>
+      <div class="benefit-card reveal reveal-delay-3">
+        <span class="icon">🖨️</span>
+        <span class="text">Print-ready A3 poster included for your workstation</span>
+      </div>
+      <div class="benefit-card reveal reveal-delay-4">
+        <span class="icon">🎨</span>
+        <span class="text">Color-coded by category for instant visual scanning</span>
+      </div>
+    </div>
+
+    <div class="stats-row reveal">
+      <div class="stat-item">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Shortcuts Covered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">14</div>
+        <div class="stat-label">Pages Illustrated</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3x</div>
+        <div class="stat-label">Alias Versions</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- BLOCO 05 — URGENCY + CTA -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="block-05">
+  <div class="container">
+    <h2 class="urgency-headline reveal">
+      Starting today, model in Alias without ever hunting through menus again.<br>
+      <span style="color: var(--accent);">No more wasted hours.</span>
+    </h2>
+    <div class="reveal">
+      <a href="#plans" class="cta-button">I want mine now <span class="cta-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- BLOCO 06 — IDEAL PARA VOCÊ -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="block-06">
+  <div class="container">
+    <div class="section-tag-red reveal">PERFECT FOR YOU IF YOU WANT TO</div>
+
+    <div class="ideal-grid">
+      <div class="ideal-card reveal reveal-delay-1">
+        <div class="ic-icon">🎓</div>
+        <div class="ic-title">Land Your First Studio Job</div>
+        <div class="ic-text">Students and juniors who need to demonstrate fluency in Alias for portfolio reviews and interviews at OEM studios.</div>
+      </div>
+      <div class="ideal-card reveal reveal-delay-2">
+        <div class="ic-icon">⚙️</div>
+        <div class="ic-title">Switch from Rhino / SolidWorks</div>
+        <div class="ic-text">Designers migrating from other software who keep getting lost in Alias's massive menu structure and unfamiliar commands.</div>
+      </div>
+      <div class="ideal-card reveal reveal-delay-3">
+        <div class="ic-icon">🚀</div>
+        <div class="ic-title">Model 5x Faster Every Day</div>
+        <div class="ic-text">Working designers who lose hours each week clicking through menus instead of using the hotkeys senior modelers use.</div>
+      </div>
+    </div>
+
+    <div style="text-align: center;" class="reveal">
+      <a href="#plans" class="cta-button">I want mine now <span class="cta-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- BLOCO 07 — PRODUTO PRINCIPAL -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="block-07">
+  <div class="container">
+    <div class="receive-bar reveal">★ WHAT YOU'LL RECEIVE</div>
+
+    <div class="item-card reveal">
+      <div class="item-mockup-box">
+        <div class="mini-pdf">
+          <div class="b">★ THE BIBLE</div>
+          <div class="lines">
+            <div class="l"></div><div class="l"></div><div class="l short"></div>
+            <div class="l"></div><div class="l short"></div><div class="l"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item-content">
+        <div class="item-label">ITEM 01</div>
+        <h3>The Alias Shortcut Bible</h3>
+        <div class="sub">200+ shortcuts, explained command by command</div>
+        <ul>
+          <li>200+ shortcuts organized by workflow (Curves, Surfaces, View, Diagnostics, Selection)</li>
+          <li>Visual icons matching exactly what you see in Alias UI</li>
+          <li>Color-coded by category for instant scanning</li>
+          <li>Hidden hotkeys nobody documents in tutorials</li>
+          <li>Cross-version support: Alias 2024, 2025, 2026</li>
+          <li>14 pages, fully illustrated PDF</li>
+          <li>Lifetime updates for future Alias versions</li>
+        </ul>
+        <p style="margin-top: 14px; color: var(--accent); font-style: italic; font-size: 14px;">And much more inside...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- BLOCO 08 — BÔNUS -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="block-08">
+  <div class="container">
+    <div class="bonus-header reveal">AND IT DOESN'T STOP THERE...</div>
+    <div class="bonus-more reveal">You'll also receive...</div>
+    <div class="bonus-pill reveal">⚡ 4 EXCLUSIVE BONUSES</div>
+
+    <div class="bonus-grid">
+      <div class="bonus-card reveal reveal-delay-1">
+        <div class="bonus-tag">#1 BONUS</div>
+        <div class="bonus-mockup">
+          <div class="mini">
+            <div class="head"></div>
+            <div class="line"></div><div class="line"></div><div class="line"></div>
+          </div>
+        </div>
+        <h4>Custom Marking Menu</h4>
+        <div class="b-italic">.mi file ready to import</div>
+        <p>Drag, drop, import. Your Alias workspace upgraded with pro shortcuts in 30 seconds.</p>
+      </div>
+      <div class="bonus-card reveal reveal-delay-2">
+        <div class="bonus-tag">#2 BONUS</div>
+        <div class="bonus-mockup">
+          <div class="mini">
+            <div class="head"></div>
+            <div class="line"></div><div class="line"></div><div class="line"></div>
+          </div>
+        </div>
+        <h4>A3 Printable Poster</h4>
+        <div class="b-italic">High-res print file</div>
+        <p>Pin it next to your monitor. The complete shortcut map in one glance, always within reach.</p>
+      </div>
+      <div class="bonus-card reveal reveal-delay-3">
+        <div class="bonus-tag">#3 BONUS</div>
+        <div class="bonus-mockup">
+          <div class="mini">
+            <div class="head"></div>
+            <div class="line"></div><div class="line"></div><div class="line"></div>
+          </div>
+        </div>
+        <h4>100 Curated Tutorials</h4>
+        <div class="b-italic">YouTube links library</div>
+        <p>The 100 best free Alias tutorials online, organized by skill level and topic. No more scrolling.</p>
+      </div>
+      <div class="bonus-card reveal reveal-delay-4">
+        <div class="bonus-tag">#4 BONUS</div>
+        <div class="bonus-mockup">
+          <div class="mini">
+            <div class="head"></div>
+            <div class="line"></div><div class="line"></div><div class="line"></div>
+          </div>
+        </div>
+        <h4>Beginner's Workflow Map</h4>
+        <div class="b-italic">Your first 30 days in Alias</div>
+        <p>The exact path from opening the software for the first time to modeling your first Class-A surface.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- BLOCO 09 — PLANOS -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="block-09" id="plans">
+  <div class="container">
+    <h2 class="plans-headline reveal">Choose your plan</h2>
+    <p class="plans-sub reveal">Most designers pick the Complete plan to save 73%</p>
+
+    <div class="plans-grid">
+      <!-- BÁSICO -->
+      <div class="plan basic reveal reveal-delay-1">
+        <div class="plan-tag">Basic Plan</div>
+        <h3>Shortcut Bible Only</h3>
+        <div class="plan-mockup">
+          <div class="pkg">
+            <div class="b">PDF</div>
+            <div class="l"></div><div class="l"></div><div class="l"></div>
+          </div>
+        </div>
+        <ul>
+          <li>200+ shortcuts PDF (14 pages)</li>
+          <li>Workflow-grouped structure</li>
+          <li>Color-coded by category</li>
+          <li>Cross-version (2024/25/26)</li>
+          <li class="cross">Custom Marking Menu file</li>
+          <li class="cross">A3 Printable Poster</li>
+          <li class="cross">100 Curated Tutorials</li>
+          <li class="cross">Beginner's Workflow Map</li>
+          <li class="cross">Lifetime updates</li>
+        </ul>
+        <div class="plan-price"><span class="cur">$</span>12</div>
+        <div class="plan-installment">one-time payment</div>
+        <a href="#" class="plan-cta">Get Basic →</a>
+        <div class="urgency-line">⚠ Without the bonuses, you only have the shortcuts — not the upgraded workspace</div>
+      </div>
+
+      <!-- COMPLETO -->
+      <div class="plan full reveal reveal-delay-2">
+        <div class="save-badge">SAVE $32</div>
+        <div class="plan-tag">★ Most Popular</div>
+        <h3>Complete Bundle</h3>
+        <div class="plan-mockup">
+          <div class="pkg">
+            <div class="b">★ COMPLETE</div>
+            <div class="l"></div><div class="l"></div><div class="l"></div>
+          </div>
+        </div>
+        <ul>
+          <li>200+ shortcuts PDF (14 pages)</li>
+          <li>Workflow-grouped structure</li>
+          <li>Color-coded by category</li>
+          <li>Cross-version (2024/25/26)</li>
+          <li><strong>Custom Marking Menu file</strong></li>
+          <li><strong>A3 Printable Poster</strong></li>
+          <li><strong>100 Curated Tutorials</strong></li>
+          <li><strong>Beginner's Workflow Map</strong></li>
+          <li><strong>Lifetime updates included</strong></li>
+        </ul>
+        <div class="plan-anchor"><s>$59</s> total value</div>
+        <div class="plan-price"><span class="cur">$</span>27</div>
+        <div class="plan-installment">one-time · save $32</div>
+        <a href="#" class="plan-cta">Get Complete →</a>
+        <div class="urgency-line">⚡ Launch price ends soon · All 4 bonuses included</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee-block">
+  <div class="container">
+    <div class="seal reveal">
+      <div class="n">7</div>
+      <div class="d">DAYS</div>
+    </div>
+    <h3 class="reveal">Risk-Free Guarantee</h3>
+    <p class="reveal">Use the cheat sheet for 7 days. If it doesn't speed up your modeling workflow, reply to your receipt email and get every cent back. No questions, no screenshots, no hassle.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- BLOCO 10 — FAQ -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="block-10">
+  <div class="container">
+    <h2 class="faq-title reveal">Frequently Asked Questions</h2>
+
+    <details open class="reveal">
+      <summary>How will I receive the product?</summary>
+      <p>Right after payment, you'll receive an email with instant download links for the PDF, the marking menu (.mi) file, and the A3 poster. You can also access everything through your secure customer area.</p>
+    </details>
+    <details class="reveal">
+      <summary>What payment methods do you accept?</summary>
+      <p>We accept all major credit cards (Visa, Mastercard, American Express, Discover) and PayPal. All payments are processed through Stripe with bank-level encryption.</p>
+    </details>
+    <details class="reveal">
+      <summary>Is the payment secure?</summary>
+      <p>Yes. We use Stripe for payment processing — the same platform used by Amazon, Google, and Shopify. Your card details never touch our servers.</p>
+    </details>
+    <details class="reveal">
+      <summary>Is there a guarantee?</summary>
+      <p>Absolutely. You have 7 full days to test the cheat sheet. If it doesn't speed up your workflow, reply to your receipt email and we'll refund every cent. No questions asked.</p>
+    </details>
+    <details class="reveal">
+      <summary>Will this work on Mac or Linux?</summary>
+      <p>Alias is officially Windows-only software (per Autodesk). All shortcuts in this cheat sheet are based on the Windows version. If you're running Alias through a Windows VM on Mac/Linux, the shortcuts work the same.</p>
+    </details>
+    <details class="reveal">
+      <summary>Does this cover Alias LT, Concept, AutoStudio?</summary>
+      <p>Yes. All core commands work across Alias Surface, AutoStudio, Concept, and Design. Commands exclusive to certain variants are clearly marked so you know which apply to your license.</p>
+    </details>
+    <details class="reveal">
+      <summary>What about Alias 2027 when it launches?</summary>
+      <p>Lifetime updates are included with the Complete plan. When a new Alias version drops, you'll receive the updated cheat sheet at the same email you bought with — free, forever.</p>
+    </details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="block-05" style="padding: 60px 0 80px;">
+  <div class="container" style="text-align: center;">
+    <h2 class="urgency-headline reveal" style="margin-bottom: 16px;">
+      Stop hunting.<br>
+      <span style="color: var(--accent);">Start designing.</span>
+    </h2>
+    <p style="color: var(--muted); margin-bottom: 28px; font-size: 14px;" class="reveal">Instant download · 7-day refund · Lifetime access</p>
+    <div class="reveal">
+      <a href="#plans" class="cta-button">Get the Shortcut Bible →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- BLOCO 11 — FOOTER -->
+<!-- ═══════════════════════════════════════════════════ -->
+<footer class="block-11">
+  <div class="container">
+    <div class="footer-brand">© 2026 · ALIAS SHORTCUT BIBLE</div>
+    <p class="footer-disclaimer">
+      This site is not affiliated with or endorsed by Autodesk, Inc. "Autodesk" and "Alias" are trademarks of Autodesk, Inc. This product is an independent educational reference compiled from publicly available documentation and community knowledge. Results depend on individual practice and application.
+    </p>
+    <div class="footer-links">
+      <a href="#">Terms</a> · <a href="#">Privacy</a> · <a href="#">Refund Policy</a> · <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div>
+    <div class="price">$27</div>
+    <div class="sub">Complete Bundle · Save $32</div>
+  </div>
+  <a href="#plans" class="btn">Get it now →</a>
+</div>
+
+<script>
+  // Countdown Timer — 4h window
+  (function() {
+    var KEY = 'alias-cd-end';
+    var end = localStorage.getItem(KEY);
+    if (!end || Date.now() > parseInt(end)) {
+      end = Date.now() + 4 * 60 * 60 * 1000;
+      localStorage.setItem(KEY, end);
+    }
+    function tick() {
+      var diff = parseInt(end) - Date.now();
+      if (diff <= 0) { diff = 0; }
+      var h = Math.floor(diff / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+      document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+      document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  // Scroll reveal
+  (function() {
+    var els = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function(el) { io.observe(el); });
+  })();
+
+  // Sticky CTA — hide when plans section is visible
+  (function() {
+    var sticky = document.getElementById('stickyCta');
+    var plans = document.getElementById('plans');
+    var hero = document.querySelector('.block-01');
+    var heroOut = false;
+
+    var heroObs = new IntersectionObserver(function(e) {
+      heroOut = !e[0].isIntersecting;
+    }, { threshold: 0.1 });
+    heroObs.observe(hero);
+
+    var plansObs = new IntersectionObserver(function(e) {
+      if (e[0].isIntersecting) { sticky.style.display = 'none'; }
+      else if (heroOut) { sticky.style.display = 'flex'; }
+    }, { threshold: 0.1 });
+    plansObs.observe(plans);
+  })();
+</script>
+
+</body>
+</html>
