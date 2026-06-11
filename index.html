@@ -27,7 +27,11 @@ src="https://www.facebook.com/tr?id=1083701180562194&ev=PageView&noscript=1"/></
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet" />
+<!-- Non-render-blocking font load -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" /></noscript>
+<!-- Preload LCP image -->
+<link rel="preload" as="image" href="product-mockup.webp" type="image/webp" />
 <style>
   :root {
     --bg: #080808;
@@ -1235,7 +1239,10 @@ src="https://www.facebook.com/tr?id=1083701180562194&ev=PageView&noscript=1"/></
     </h1>
 
     <div class="product-shot reveal reveal-delay-2">
-      <img src="product-mockup.png" alt="Alias Shortcut Bible — PDF guide and A3 poster" style="width:100%;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,0.6);" />
+      <picture>
+        <source srcset="product-mockup.webp" type="image/webp" />
+        <img src="product-mockup-fallback.png" alt="Alias Shortcut Bible — PDF guide and A3 poster" width="500" height="333" fetchpriority="high" loading="eager" style="width:100%;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,0.6);" />
+      </picture>
     </div>
 
     <div class="badges-row reveal reveal-delay-3">
