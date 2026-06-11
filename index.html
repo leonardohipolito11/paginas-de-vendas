@@ -31,18 +31,23 @@ src="https://www.facebook.com/tr?id=1083701180562194&ev=PageView&noscript=1"/></
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bebas+Neue&display=swap" /></noscript>
 <!-- Preload LCP image -->
-<link rel="preload" as="image" href="product-mockup.webp" type="image/webp" />
+<link rel="preload" as="image" href="product-mockup.webp" type="image/webp" fetchpriority="high" />
+<!-- DNS prefetch for third-party domains -->
+<link rel="dns-prefetch" href="https://connect.facebook.net" />
+<link rel="preconnect" href="https://connect.facebook.net" crossorigin />
+<link rel="dns-prefetch" href="https://www.facebook.com" />
+<link rel="dns-prefetch" href="https://pay.hotmart.com" />
 <style>
   :root {
     --bg: #080808;
     --bg-2: #111111;
     --ink: #ffffff;
     --ink-2: #c4c4c4;
-    --muted: #7a7a7a;
+    --muted: #8a8a8a;
     --accent: #FFD700;
     --accent-dim: rgba(255, 215, 0, 0.15);
-    --cta: #00C853;
-    --cta-hover: #00E676;
+    --cta: #007D38;
+    --cta-hover: #00C853;
     --danger: #ff4444;
     --line: rgba(255, 255, 255, 0.08);
     --line-strong: rgba(255, 255, 255, 0.15);
@@ -77,7 +82,7 @@ src="https://www.facebook.com/tr?id=1083701180562194&ev=PageView&noscript=1"/></
 
   /* TOP BAR */
   .topbar {
-    background: linear-gradient(90deg, #009624 0%, var(--cta) 50%, #009624 100%);
+    background: linear-gradient(90deg, #006028 0%, var(--cta) 50%, #006028 100%);
     background-size: 200% auto;
     animation: shimmer-bar 3s linear infinite;
     text-align: center;
@@ -353,7 +358,7 @@ src="https://www.facebook.com/tr?id=1083701180562194&ev=PageView&noscript=1"/></
     text-decoration: none;
     border-radius: var(--radius);
     letter-spacing: 0.03em;
-    box-shadow: 0 6px 0 #009624, 0 12px 40px rgba(0, 200, 83, 0.3);
+    box-shadow: 0 6px 0 #004d22, 0 12px 40px rgba(0, 125, 56, 0.3);
     transition: all 0.15s;
     border: none;
     cursor: pointer;
@@ -376,13 +381,13 @@ src="https://www.facebook.com/tr?id=1083701180562194&ev=PageView&noscript=1"/></
     31% { opacity: 0; }
   }
   @keyframes pulse-cta {
-    0%, 100% { transform: scale(1); box-shadow: 0 6px 0 #009624, 0 12px 40px rgba(0,200,83,0.3); }
-    50% { transform: scale(1.015); box-shadow: 0 6px 0 #009624, 0 16px 50px rgba(0,200,83,0.4); }
+    0%, 100% { transform: scale(1); box-shadow: 0 6px 0 #004d22, 0 12px 40px rgba(0,125,56,0.3); }
+    50% { transform: scale(1.015); box-shadow: 0 6px 0 #004d22, 0 16px 50px rgba(0,125,56,0.4); }
   }
   .cta-button:hover {
     background: var(--cta-hover);
     transform: translateY(3px);
-    box-shadow: 0 3px 0 #009624, 0 8px 24px rgba(0, 200, 83, 0.4);
+    box-shadow: 0 3px 0 #004d22, 0 8px 24px rgba(0, 125, 56, 0.4);
     animation: none;
   }
   .cta-arrow { display: inline-block; margin-left: 8px; }
@@ -981,8 +986,8 @@ src="https://www.facebook.com/tr?id=1083701180562194&ev=PageView&noscript=1"/></
     color: var(--cta);
     font-weight: 900;
   }
-  .plan ul li.cross::before { content: '✕'; color: #444; }
-  .plan ul li.cross { color: #444; text-decoration: line-through; text-decoration-color: #333; }
+  .plan ul li.cross::before { content: '✕'; color: #888; }
+  .plan ul li.cross { color: #888; text-decoration: line-through; text-decoration-color: #666; }
   .plan .plan-anchor { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
   .plan .plan-anchor s { color: #444; }
   .plan .plan-price {
@@ -1006,7 +1011,7 @@ src="https://www.facebook.com/tr?id=1083701180562194&ev=PageView&noscript=1"/></
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 0.04em;
-    box-shadow: 0 4px 0 #009624;
+    box-shadow: 0 4px 0 #004d22;
     transition: all 0.15s;
   }
   .plan.basic .plan-cta {
@@ -1014,7 +1019,7 @@ src="https://www.facebook.com/tr?id=1083701180562194&ev=PageView&noscript=1"/></
     box-shadow: 0 4px 0 #222;
     color: var(--muted);
   }
-  .plan .plan-cta:hover { transform: translateY(3px); box-shadow: 0 1px 0 #009624; }
+  .plan .plan-cta:hover { transform: translateY(3px); box-shadow: 0 1px 0 #004d22; }
   .plan.basic .plan-cta:hover { box-shadow: 0 1px 0 #222; }
   .plan .urgency-line {
     background: rgba(255,68,68,0.1);
@@ -1148,13 +1153,13 @@ src="https://www.facebook.com/tr?id=1083701180562194&ev=PageView&noscript=1"/></
     text-align: center;
     margin-bottom: 14px;
     font-size: 13px;
-    color: #555;
+    color: #777;
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
   .footer-disclaimer {
     text-align: center;
-    color: #444;
+    color: #777;
     font-size: 11px;
     line-height: 1.7;
     max-width: 580px;
@@ -1164,9 +1169,9 @@ src="https://www.facebook.com/tr?id=1083701180562194&ev=PageView&noscript=1"/></
     text-align: center;
     margin-top: 16px;
     font-size: 11px;
-    color: #444;
+    color: #777;
   }
-  .footer-links a { color: #555; text-decoration: none; margin: 0 10px; transition: color 0.2s; }
+  .footer-links a { color: #888; text-decoration: none; margin: 0 10px; transition: color 0.2s; }
   .footer-links a:hover { color: var(--muted); }
 
   /* STICKY MOBILE CTA */
@@ -1196,7 +1201,7 @@ src="https://www.facebook.com/tr?id=1083701180562194&ev=PageView&noscript=1"/></
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
-    box-shadow: 0 4px 0 #009624;
+    box-shadow: 0 4px 0 #004d22;
     white-space: nowrap;
     flex-shrink: 0;
   }
@@ -1238,9 +1243,13 @@ src="https://www.facebook.com/tr?id=1083701180562194&ev=PageView&noscript=1"/></
       organized command by command
     </h1>
 
-    <div class="product-shot reveal reveal-delay-2">
+    <div class="product-shot">
       <picture>
-        <source srcset="product-mockup.webp" type="image/webp" />
+        <source
+          type="image/webp"
+          srcset="product-mockup-500.webp 500w, product-mockup.webp 1000w"
+          sizes="(max-width: 600px) 500px, 1000px"
+        />
         <img src="product-mockup-fallback.png" alt="Alias Shortcut Bible — PDF guide and A3 poster" width="500" height="333" fetchpriority="high" loading="eager" style="width:100%;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,0.6);" />
       </picture>
     </div>
